@@ -18,7 +18,7 @@ In `.github/workflows/<your-workflow-name>.yml`, add the following steps:
     DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
   with:
     flags: '-azrh --delete' # rsync flags (default: '-azrh')
-    port: '' # SSH port (default: 22)
+    port: '22' # SSH port (default: 22)
     src: 'build/' # Local path to deploy, relative to $GITHUB_WORKSPACE (default: '')
     dest: 'user@example.com:/var/www/example.com'
 
