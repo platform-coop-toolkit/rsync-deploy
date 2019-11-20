@@ -9,7 +9,7 @@ inputs:
   flags:
     description: 'Flags for rsync.'
     required: true
-    default: '-azrh --delete --progress'
+    default: '-azrh'
   port:
     description: 'SSH Port'
     required: true
