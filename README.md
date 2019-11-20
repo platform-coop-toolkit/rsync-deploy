@@ -25,4 +25,3 @@ In `.github/workflows/<your-workflow-name>.yml`, add the following steps:
 - name: Display deployment status
   run: echo "${{ steps.deploy.outputs.status }}"
 ```
-
