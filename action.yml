@@ -1,0 +1,34 @@
+# action.yml
+name: 'Rsync Deploy'
+description: 'Deploy content to a remote server using rsync.'
+author: 'OCAD University'
+branding:
+  icon: 'refresh-cw'
+  color: 'green'
+inputs:
+  flags:
+    description: 'Flags for rsync.'
+    required: true
+    default: '-azrh --delete --progress'
+  port:
+    description: 'SSH Port'
+    required: true
+    default: '22'
+  src:
+    description: 'Local directory to be synced.'
+    required: true
+    default: ''
+  dest:
+    description: 'Remote server and path.'
+    required: true
+outputs:
+  status:
+    description: 'Status of the command.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.flags }}
+    - ${{ inputs.port }}
+    - ${{ inputs.src }}
+    - ${{ inputs.dest }}
