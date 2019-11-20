@@ -8,7 +8,7 @@ Add an SSH public key to the server.
 
 Add the corresponding private key to the repository as an [encrypted secret](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets) named `DEPLOY_KEY`.
 
-In `.github/workflows/<your-workflow-name>.yml`, add the following steps:
+In `.github/workflows/<your-workflow-name>.yml`, add the following steps (note: `src` is relative to [$GITHUB_WORKSPACE](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/using-environment-variables#default-environment-variables)):
 
 ```yml
 - name: Deploy to server
